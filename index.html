@@ -11,9 +11,15 @@
       <!--Filter for categories-->
       <section class="filter__section filter__section--categories">
         <span class="filter__labelone">Kategorier</span>
-        <button class="filter-category" type="button">Natur</button>
-        <button class="filter-category" type="button">Historie</button>
-        <button class="filter-category" type="button">Videnskab</button>
+        <button class="filter-category" type="button" data-category="natur">
+          Natur
+        </button>
+        <button class="filter-category" type="button" data-category="historie">
+          Historie
+        </button>
+        <button class="filter-category" type="button" data-category="Videnskab">
+          Videnskab
+        </button>
       </section>
       <!--Filter for age group-->
       <section class="filter__section filter__section--age">
@@ -27,6 +33,7 @@
             min="0"
             max="100"
             value="25"
+            step="1"
           />
           <label for="age-range" class="filter__age__label">100</label>
           <!--Value: initial setting for range section-->
