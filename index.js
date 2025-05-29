@@ -1,7 +1,6 @@
-//javascript redo//
 const postsContainer = document.getElementById("posts");
 const range = document.getElementById("age-range");
-const output = document.getElementById(age - value);
+const output = document.getElementById("age-value");
 const categoryButtons = document.querySelectorAll(".filter__category");
 
 let selectedCategory = null;
@@ -22,13 +21,24 @@ function getAgeGroup(age) {
     ageGroups.find((group) => age >= group.min && age <= group.max)?.label || ""
   );
 }
+function updateOutput() {
+  selectedAge = parseInt(range.value);
+  output.textContent = selectedAge;
+
+  const percent = (selectedAge - range.min) / (range.max - range.min);
+  const offset = percent * range.offsetWidth;
+  output.style.left = `${offset}px`;
+
+  fetchPosts();
+}
+
 function fetchPosts() {
   const ageGroup = getAgeGroup(selectedAge);
   let url = "https://dssj.mortenholst.dk/wp-json/wp/v2/posts?_embed";
   const filters = [];
 
   if (selectedCategory) filters.push(`categories=${selectedCategory}`);
-  if (ageGroup) filters.push(`age_group=${ageGroup}`);
+  if (ageGroup) filters.push(`categories=${encodeURIComponent(ageGroup)}`);
 
   if (filters.length) url += "&" + filters.join("&");
   fetch(url)
@@ -36,7 +46,7 @@ function fetchPosts() {
     .then((data) => {
       postsContainer.innerHTML = data
         .map(
-          (post) => `<article class="post"
+          (post) => `<article class="post">
             <h2>${post.title.rendered}</h2>
             <div>${post.excerpt.rendered}</div>
             </article>`
@@ -44,6 +54,12 @@ function fetchPosts() {
         .join("");
     });
 }
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedCategory = button.dataset.category;
+    fetchPosts();
+  });
+});
 
 range.addEventListener("input", updateOutput);
 window.addEventListener("resize", updateOutput);

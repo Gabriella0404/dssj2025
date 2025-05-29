@@ -1,6 +1,3 @@
-body {
-  background-color: rgb(167, 203, 191);
-}
 .filter {
   display: flex;
   /* flex-wrap: wrap; */
@@ -71,7 +68,7 @@ body {
   transform: none;
   background-color: #b4e6be;
   padding: 6.5px 8.5px;
-  border-radius: 100%;
+  border-radius: 10px;
   font-weight: bold;
   pointer-events: none;
   /* Pointer events none disables mouse interaction with this element */
