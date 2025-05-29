@@ -8,7 +8,7 @@ function updateOutput() {
   const val = parseInt(range.value);
   //live update output age//
   output.textContent = val;
-  const percent = (val - min) / (max - min);
+  const percent (val - min) / (max - min);
   const offset = percent * range.offsetWidth; //To convert the value percentage into a position relative to the sliders width//
   output.style.left = `${offset}px`
   //To move the output bubble horizontally//
@@ -16,3 +16,4 @@ function updateOutput() {
 range.addEventListener('input', updateOutput);
 updateOutput();
 
+//javascript redo

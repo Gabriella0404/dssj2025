@@ -67,7 +67,8 @@ body {
 .filter-age-output {
   position: absolute;
   top: 35px;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
+  transform: none;
   background-color: #b4e6be;
   padding: 6.5px 8.5px;
   border-radius: 100%;
