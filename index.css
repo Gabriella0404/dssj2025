@@ -62,3 +62,18 @@ body {
 .filter__range::-webkit-slider-thumb:hover {
   background-color: #96c69f;
 }
+
+/* Filter age output styling (follows */
+.filter-age-output {
+  background-color: #b4e6be;
+  position: absolute;
+  top: -30px;
+  left: 0px;
+  transform: translateX(50%);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: bold;
+  pointer-events: none;
+  /* Pointer events none disables mouse interaction with this element */
+  white-space: nowrap;
+}
