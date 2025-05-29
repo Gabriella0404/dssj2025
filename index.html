@@ -7,17 +7,29 @@
   </head>
   <body>
     <article class="filter">
-      <!--Filter for kategorier-->
+      <!--Filter for categories-->
       <section class="filter__categories">
         <span class="filter__labelone">Kategorier</span>
-        <button class="category" type="button">Natur</button>
-        <button class="category" type="button">Historie</button>
-        <button class="category" type="button">Videnskab</button>
+        <button class="filter-category" type="button">Natur</button>
+        <button class="filter-category" type="button">Historie</button>
+        <button class="filter-category" type="button">Videnskab</button>
       </section>
-      <!--Filter for alders gruppering-->
+      <!--Filter for age group-->
       <section class="filter__age">
         <span class="filter__labeltwo">Alder</span>
-        <label for="age-range"></label>
+        <label for="age-range" class="filter__age__label"></label>
+        <input
+          type="range"
+          id="age-range"
+          class="filter__range"
+          min="0"
+          max="80"
+          value="25"
+        />
+        <!--Value: initial setting for range section-->
+        <output id="age-value" class="filter-age-output" for="age-range"
+          >14</output
+        >
       </section>
     </article>
   </body>
