@@ -1,0 +1,80 @@
+.filter {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: auto;
+  border-radius: 50px;
+  max-width: 700px;
+  gap: 3rem;
+}
+
+.filter__section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* flex-wrap: wrap; */
+}
+
+/* Filter button */
+.filter-category {
+  background-color: #b4e6be;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  font-weight: 500;
+}
+.filter-category:hover {
+  background-color: #96c69f;
+}
+
+/* Filter range (I adjusted the styling of the slider to match figma) */
+.filter__range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 3px;
+  background: #628871;
+}
+
+.filter__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  background: #b4e6be;
+  cursor: pointer;
+}
+.filter__range::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  color: #b4e6be;
+  cursor: pointer;
+}
+.filter__range::-webkit-slider-thumb:hover {
+  background-color: #96c69f;
+}
+
+/* Filter age output styling (follows */
+.filter-age-output {
+  position: absolute;
+  top: 35px;
+  /* transform: translateX(-50%); */
+  transform: none;
+  background-color: #b4e6be;
+  padding: 6.5px 8.5px;
+  border-radius: 10px;
+  font-weight: bold;
+  pointer-events: none;
+  /* Pointer events none disables mouse interaction with this element */
+}
+
+.range-container {
+  position: relative;
+  width: 100%;
+}
