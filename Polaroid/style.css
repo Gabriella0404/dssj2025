@@ -1,11 +1,10 @@
 main {
   position: relative;
   width: 600px;
-  height: 500px;
   margin: 40px auto;
 }
 
-/* All polaroids are absolutely positioned to overlap */
+/* Absolutely positioned to overlap */
 main img {
   position: absolute;
   width: 320px;
@@ -16,7 +15,7 @@ main img {
   cursor: pointer;
 }
 
-/* Default scattered layout (image one) */
+/* Default scattered layout */
 .ringeridning {
   z-index: 4;
   transform: rotate(-4deg) translate(-10px, 20px);
@@ -38,7 +37,7 @@ main img {
   transform: rotate(-15deg) translate(-50px, 10px);
 }
 
-/* Hovered scattered layout (image two) */
+/* Hovered scattered layout */
 main:hover .ringeridning {
   transform: rotate(-12deg) translate(-100px, -100px);
 }
