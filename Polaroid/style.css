@@ -1,0 +1,55 @@
+main {
+  position: relative;
+  width: 600px;
+  margin: 40px auto;
+}
+
+/* Absolutely positioned to overlap */
+main img {
+  position: absolute;
+  width: 320px;
+  top: 90px;
+  left: 120px;
+  transition: transform 0.5s cubic-bezier(0.4, 2, 0.6, 1), z-index 0s;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Default scattered layout */
+.ringeridning {
+  z-index: 4;
+  transform: rotate(-4deg) translate(-10px, 20px);
+}
+.grasten {
+  z-index: 5;
+  transform: rotate(12deg) translate(50px, -20px);
+}
+.genarm {
+  z-index: 2;
+  transform: rotate(-8deg) translate(-20px, -30px);
+}
+.dybbol {
+  z-index: 1;
+  transform: rotate(6deg) translate(20px, 40px);
+}
+.universe {
+  z-index: 3;
+  transform: rotate(-15deg) translate(-50px, 10px);
+}
+
+/* Hovered scattered layout */
+main:hover .ringeridning {
+  transform: rotate(-12deg) translate(-100px, -100px);
+}
+main:hover .grasten {
+  transform: rotate(8deg) translate(100px, -100px);
+}
+main:hover .genarm {
+  transform: rotate(0deg) translate(0, 150px);
+}
+main:hover .dybbol {
+  transform: rotate(18deg) translate(200px, 40px);
+}
+main:hover .universe {
+  transform: rotate(-7deg) translate(-200px, 40px);
+}
